@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    color: #0f172a;
+    min-height: 100vh;
+}
+.navbar {
+    height: 70px;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.25);
+    animation: navbarDrop 0.7s ease;
+}
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+.nav-links a:hover {
+    color: white;
+}
+#logoutBtn {
+    padding: 9px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+#logoutBtn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.35);
+}
+#logoutBtn:active {
+    transform: scale(0.96);
+}
+.dashboard {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 25px;
+}
+.welcome {
+    margin-bottom: 32px;
+    animation: fadeUp 0.7s ease;
+}
+.welcome h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+.welcome p {
+    color: #64748b;
+    font-size: 16px;
+}
+.summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+}
+.summary-card {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: cardAppear 0.6s ease backwards;
+}
+.summary-card:nth-child(1) {
+    animation-delay: 0.15s;
+}
+.summary-card:nth-child(2) {
+    animation-delay: 0.25s;
+}
+.summary-card:nth-child(3) {
+    animation-delay: 0.35s;
+}
+.summary-card:nth-child(4) {
+    animation-delay: 0.45s;
+}
+.summary-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.13);
+}
+.summary-card h3 {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+.summary-card p {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2563eb;
+}
+.add-assignment {
+    background: rgba(255, 255, 255, 0.94);
+    padding: 28px;
+    border-radius: 16px;
+    margin-bottom: 35px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+    animation: fadeUp 1s ease;
+}
+.add-assignment h2, .assignments h2 {
+    margin-bottom: 20px;
+}
+#assignmentForm {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr auto;
+    gap: 12px;
+}
+#assignmentForm input, #assignmentForm select {
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    background: #f8fafc;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+#assignmentForm input:focus, #assignmentForm select:focus {
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+#assignmentForm button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient( 135deg, #2563eb, #1d4ed8 );
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+#assignmentForm button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+#assignmentForm button:active {
+    transform: scale(0.97);
+}
+.assignments {
+    animation: fadeUp 1.2s ease;
+}
+#assignmentList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.assignment-card {
+    background: white;
+    padding: 22px;
+    border-radius: 15px;
+    border-left: 5px solid #2563eb;
+    box-shadow:
+        0 7px 22px rgba(15, 23, 42, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: assignmentAppear 0.5s ease;
+}
+.assignment-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(15, 23, 42, 0.12);
+}
+.assignment-card h3 {
+    margin-bottom: 15px;
+    font-size: 19px;
+}
+.assignment-card p {
+    margin-bottom: 9px;
+    color: #475569;
+}
+.complete-btn, .delete-btn {
+    padding: 9px 13px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.complete-btn:hover, .delete-btn:hover {
+    transform: translateY(-2px);
+}
+.complete-btn:active, .delete-btn:active {
+    transform: scale(0.95);
+}
+.complete-btn {
+    background: #16a34a;
+    color: white;
+}
+.complete-btn:hover {
+    box-shadow: 0 6px 15px rgba(22, 163, 74, 0.3);
+}
+.delete-btn {
+    background: #dc2626;
+    color: white;
+}
+.delete-btn:hover {
+    box-shadow: 0 6px 15px rgba(220, 38, 38, 0.3);
+}
+.assignment-card.completed {
+    opacity: 0.7;
+    border-left-color: #16a34a;
+    transition: opacity 0.4s ease, border-left-color 0.4s ease, transform 0.3s ease;
+}
+.assignment-card.completed h3 {
+    text-decoration: line-through;
+}
+.empty-message {
+    color: #64748b;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeUp 0.5s ease;
+}
+@keyframes navbarDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+@keyframes assignmentAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 900px) {
+    .summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #assignmentForm {
+        grid-template-columns: 1fr 1fr;
+    }
+    #assignmentList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0 20px;
+    }
+    .logo {
+        font-size: 18px;
+    }
+    .nav-links {
+        display: none;
+    }
+    .summary {
+        grid-template-columns: 1fr;
+    }
+    #assignmentForm {
+        grid-template-columns: 1fr;
+    }
+    #assignmentList {
+        grid-template-columns: 1fr;
+    }
+    .dashboard {
+        padding: 30px 18px;
+    }
+    .welcome h1 {
+        font-size: 27px;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+.dashboard, .assignments {
+    scroll-margin-top: 80px;
+}
+
+.assignment-filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0 25px;
+    flex-wrap: wrap;
+}
+
+.assignment-filters button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #e8d8cc;
+    color: #3e2723;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.assignment-filters button:hover {
+    transform: translateY(-3px);
+    background: #3e2723;
+    color: white;
+}
+
+.assignment-filters button.active {
+    background: #3e2723;
+    color: white;
+}

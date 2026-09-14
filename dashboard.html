@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Assignment Tracker</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            Assignment Tracker
+        </div>
+        <ul class="nav-links">
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#assignments">Assignments</a></li>
+            <li><a href="index.html#about">About</a></li>
+        </ul>
+        <button id="logoutBtn">
+            Logout
+        </button>
+    </nav>
+    <main class="dashboard" id="dashboard">
+        <section class="welcome">
+            <h1 id="welcomeUser">Welcome, Student! 👋</h1>
+            <p>Manage your assignments and stay organized.</p>
+        </section>
+        <section class="summary">
+            <div class="summary-card">
+                <h3>Total Assignments</h3>
+                <p id="totalAssignments">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Completed</h3>
+                <p id="completedAssignments">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Pending</h3>
+                <p id="pendingAssignments">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Overdue</h3>
+                <p id="overdueAssignments">0</p>
+            </div>
+        </section>
+        <section class="add-assignment">
+            <h2>Add New Assignment</h2>
+            <form id="assignmentForm">
+                <input type="text" id="assignmentTitle" placeholder="Assignment Title" required>
+                <input type="text" id="subject" placeholder="Subject" required>
+                <input type="date" id="dueDate" required>
+                <select id="priority" required>
+                    <option value="">Select Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <button type="submit">Add Assignment</button>
+            </form>
+        </section>
+        <section class="assignments" id="assignments">
+            <h2>My Assignments</h2>
+            <div class="assignment-filters">
+                <button onclick="filterAssignments('all')">All</button>
+                <button onclick="filterAssignments('pending')">Pending</button>
+                <button onclick="filterAssignments('completed')">Completed</button>
+                <button onclick="filterAssignments('overdue')">Overdue</button>
+            </div>
+            <div id="assignmentList">
+            </div>
+        </section>
+    </main>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
